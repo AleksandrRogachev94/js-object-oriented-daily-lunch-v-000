@@ -73,7 +73,7 @@ class Employer {
     return store.customers.filter(customer => customer.employerId === this.id)
   }
   deliveries(){
-    res = []
+  let res = []
    //return this.employees().map(employee => employee.deliveries())
    this.empoyees().forEach(e => {
      e.deliveries().forEach(d => res.push(d))
