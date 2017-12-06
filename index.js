@@ -75,7 +75,7 @@ class Employer {
   deliveries(){
   let res = []
    //return this.employees().map(employee => employee.deliveries())
-   this.empoyees().forEach(e => {
+   this.employees().forEach(e => {
      e.deliveries().forEach(d => res.push(d))
    })
 
