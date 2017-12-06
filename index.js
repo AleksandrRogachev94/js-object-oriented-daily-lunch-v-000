@@ -99,4 +99,20 @@ class Employer {
       }
     })
   }
+
+  employerStats() {
+    let arr = this.deliveries().map(delivery => delivery.meal())
+
+    const result = {}
+
+    arr.forEach(meal => {
+      if(!result[meal.id]) {
+        result[meal.id] = 1
+      } else {
+        result[meal.id]++
+      }
+    })
+
+    return result
+  }
 }
