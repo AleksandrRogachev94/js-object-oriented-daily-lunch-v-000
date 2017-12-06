@@ -103,16 +103,13 @@ class Employer {
   mealTotals() {
     let arr = this.deliveries().map(delivery => delivery.meal())
 
-    const result = {}
-
-    arr.forEach(meal => {
-      if(!result[meal.id]) {
-        result[meal.id] = 1
+    return arr.reduce((acc, meal) => {
+      if(!acc[meal.id]) {
+        acc[meal.id] = 1
       } else {
-        result[meal.id]++
+        acc[meal.id]++
       }
-    })
-
-    return result
+      return acc
+    }, {})
   }
 }
