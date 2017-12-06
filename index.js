@@ -73,6 +73,9 @@ class Employer {
     return store.customers.filter(customer => customer.employerId === this.id)
   }
   deliveries(){
-   return this.employees().map(employee => employee.deliveries().delivery)
+   return this.employees().map(employee => employee.deliveries())
+  }
+  meals(){
+    return 
   }
 }
