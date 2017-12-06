@@ -74,11 +74,12 @@ class Employer {
   }
   deliveries(){
   let res = []
-   //return this.employees().map(employee => employee.deliveries())
    this.employees().forEach(e => {
      e.deliveries().forEach(d => res.push(d))
    })
-
    return res
+  }
+  meals(){
+    return this.deliveries().map(delivery => delivery.mealId)
   }
 }
