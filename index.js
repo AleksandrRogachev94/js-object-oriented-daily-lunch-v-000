@@ -80,6 +80,23 @@ class Employer {
    return res
   }
   meals(){
-    return this.deliveries().map(delivery => delivery.meal())
+    let res = this.deliveries().map(delivery => delivery.meal())
+    let sorted = res.sort(function(a, b) {
+      if(a.id > b.id) {
+        return 1
+      } else if(a.id < b.id) {
+        return -1
+      } else {
+        return 0
+      }
+    })
+
+    return sorted.filter(function(el, index) {
+      if(index === sorted.length - 1) {
+        return true
+      } else {
+        return el.id !== sorted[index + 1].id
+      }
+    })
   }
 }
