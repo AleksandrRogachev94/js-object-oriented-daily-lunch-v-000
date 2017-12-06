@@ -100,7 +100,7 @@ class Employer {
     })
   }
 
-  employerStats() {
+  mealTotals() {
     let arr = this.deliveries().map(delivery => delivery.meal())
 
     const result = {}
