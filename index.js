@@ -80,6 +80,6 @@ class Employer {
    return res
   }
   meals(){
-    return this.deliveries().map(delivery => delivery.mealId)
+    return this.deliveries().map(delivery => delivery.meal)
   }
 }
